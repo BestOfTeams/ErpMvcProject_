@@ -1,0 +1,15 @@
+﻿/*******************************************************************/
+
+Sql de Urunler Tablosu olusturulacak.
+Home ekraninda menuye urunler ile ilgili tv menusu olusturulacak
+Urungiris ve UrunListe ekranlari yapilacak
+
+Urun Kodu
+Urun Aciklama'dd
+Kutu Icerik
+Tedarikci Firma   
+
+barkod
+Fiyat
+euro - tl - dolar
+Uretim ve son kullanma (bazi urunlerde son kullanma tarihi yok yerine kullanim suresi var. buna uygun algoritma gelistirin. )
