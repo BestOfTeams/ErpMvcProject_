@@ -47,7 +47,7 @@ namespace ErpMvcProject.DataAccessLayer.EntityFramework
             objSet.Remove(obj);
             return Save();
         }
-        public T Find(Expression<Func<T, bool>> Eresult)
+        public T Find(Expression<Func<T, bool>> Eresult) 
         {
             return objSet.FirstOrDefault(Eresult);//FirstOrDefault : Bulduğun ilk değeri yada standart değeri olan null değer döndür.
         }
