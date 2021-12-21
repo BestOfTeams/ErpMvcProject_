@@ -24,6 +24,7 @@ namespace ErpMvcProject.BusinessLayer
         {
             ErpMvcContext db = new ErpMvcContext();
             db.currents.ToList();
+            //Bir değişiklik var
           //  var currentList = RCurrent.List();
           //  var currentListforwhere = RCurrent.List(x => x.CurrentGroupsId == 3);
         }
