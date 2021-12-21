@@ -40,7 +40,7 @@ namespace ErpMvcProject.DataAccessLayer.EntityFramework
         public int Update(T obj)
         {
             
-            return Save(); 
+            return Save();  
         } 
         public int Delete(T obj)
         {
