@@ -1,0 +1,46 @@
+﻿@using ErpMvcProject.BusinessLayer
+@using ErpMvcProject.Entity
+@{
+    CompanyManager cm = new CompanyManager();
+    List<Current> Companylist = cm.GetCompanies().ToList();
+
+}
+
+<table class="table table-light table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>          
+            <th scope="col">Address</th>
+            <th scope="col">Authorized</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cl in Companylist)
+        {
+            <tr>
+                <th scope="row">@cl.Id</th>
+                <td>@cl.cName</td>               
+                <td>@cl.Address1</td>
+                <td>@cl.sName1</td>
+                <td>@cl.cPhone</td>
+                <td>@cl.cMail</td>
+                <td>  @Html.ActionLink("Uptade", "Update", "Company", new { dId = cl.Id }, new { @class = "btn btn-primary" })</td>
+                <td>  @Html.ActionLink("Delete", "Delete", "Company", new { dId = cl.Id }, new { @class = "btn btn-danger" })</td>
+                <td>  @Html.ActionLink("Details", "Details", "Company", new { dId = cl.Id }, new { @class = "btn btn-secondary" })</td>
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+<script type="text/javascript">
+
+    document.getElementById("Title").innerText = "Hospitals";
+</script>

@@ -1,0 +1,47 @@
+﻿@using ErpMvcProject.BusinessLayer
+@using ErpMvcProject.Entity
+@{
+    ProductManager prod = new ProductManager();
+    List<Products> productList = prod.GetProducts().OrderBy(s => s.Id).ToList();
+
+}
+
+
+
+<table class="table table-light table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">GeneralNumber</th>
+            <th scope="col">Name</th>
+            <th scope="col">BuyingPrice</th>
+            <th scope="col">SalePrice</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pro in productList)
+        {
+            <tr>
+                <th scope="row">@pro.Id</th>
+                <td>@pro.PGeneralNumber</td>
+                <td>@pro.PName</td>
+                <td>@pro.BuyingPrice</td>
+                <td>@pro.SalePrice</td>
+                <td>  @Html.ActionLink("Uptade", "Update", "Product", new { pId = pro.Id }, new { @class = "btn btn-primary" })</td>
+                <td>  @Html.ActionLink("Delete", "Delete", "Product", new { pId = pro.Id }, new { @class = "btn btn-danger" })</td>
+                <td>  @Html.ActionLink("Details", "Details", "Product", new { pId = pro.Id }, new { @class = "btn btn-secondary" })</td>
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">  
+    document.getElementById("Title").innerText = "Product";
+    document.getElementById("CreateButton").href = "/Product/Create";
+</script>

@@ -1,0 +1,47 @@
+﻿@using ErpMvcProject.BusinessLayer
+@using ErpMvcProject.Entity
+@{
+    DoctorManager dm = new DoctorManager();
+    List<Current> doctorlist = dm.GetDoctors().ToList();
+
+}
+
+<table class="table table-light table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Title</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Address</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var dl in doctorlist)
+        {
+            <tr>
+                <th scope="row">@dl.Id</th>
+                <td>@dl.cName</td>
+                <td>@dl.Title</td>
+                <td>@dl.cPhone</td>
+                <td>@dl.cMail</td>
+                <td>@dl.Address1</td>
+                <td>  @Html.ActionLink("Uptade", "Update", "Doctor", new { dId = dl.Id }, new { @class = "btn btn-primary" })</td>
+                <td>  @Html.ActionLink("Delete", "Delete", "Doctor", new { dId = dl.Id }, new { @class = "btn btn-danger" })</td>
+                <td>  @Html.ActionLink("Details", "Details", "Doctor", new { dId = dl.Id }, new { @class = "btn btn-secondary" })</td>
+
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+<script type="text/javascript">
+
+    document.getElementById("Title").innerText = "Doctors";
+</script>
+
