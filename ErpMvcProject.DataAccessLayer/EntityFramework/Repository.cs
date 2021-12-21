@@ -36,7 +36,7 @@ namespace ErpMvcProject.DataAccessLayer.EntityFramework
         {
             objSet.Add(obj);  
             return Save(); 
-        } 
+        }  
         public int Update(T obj)
         {
             
