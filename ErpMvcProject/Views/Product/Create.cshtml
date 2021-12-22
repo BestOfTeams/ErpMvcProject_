@@ -3,7 +3,7 @@
 @model Products
 @{
     //ProductManager pm = new ProductManager();
-    //List<SelectListItem> dist = pm.AddDist().ToList();
+    //List<SelectListItem> dist = pm.AddDist();
 
     //TempData["dist"] = dist;
     //ViewBag.distributors = dist;
@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <label>Distributor</label>
                                 @*@Html.DropDownListFor(model=> model.cDispId, (List<SelectListItem>)ViewBag.distributors, new { @class = "form-control", placeholder = "distributor" })*@
-                                <input type="text" class="form-control" id="fullName" placeholder="distributor">
+                               <input type="text" class="form-control" id="fullName" placeholder="distributor">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

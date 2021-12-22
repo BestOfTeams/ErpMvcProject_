@@ -8,8 +8,10 @@ using System.Web.Mvc;
 
 namespace ErpMvcProject.Controllers
 {
+     
     public class ProductController : Controller
     {
+        ProductManager pm = new ProductManager();
         // GET: Product
         public ActionResult Product()
         {
@@ -34,10 +36,18 @@ namespace ErpMvcProject.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            //List<SelectList> a = (from s in Current
-            //                      select new SelectListItem() {
-            //                          Text=s.Cname
-            //                      });
+            /*roducts pro = null;*/
+            //List<SelectListItem> item = (from s in pm.GetDist()
+            //                             select new SelectListItem()
+            //                             {
+            //                                 Text = s.cName,
+            //                                 Value = s.Id.ToString()
+
+            //                             }).ToList();
+            //item.Find(x => x.Value == pro.cDispId.Id.ToString()).Selected=true;
+            //TempData["dist"] = item;
+            //ViewBag.distributors = item;
+            //ViewBag.Title = "Create";
 
             return View();
         }

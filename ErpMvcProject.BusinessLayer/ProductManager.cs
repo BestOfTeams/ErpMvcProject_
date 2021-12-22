@@ -18,11 +18,12 @@ namespace ErpMvcProject.BusinessLayer
         {
             return rpro.List();
         }
-        public void AddDist()
+        public List<Current> GetDist()
         {
-          var liste=  rdist.List(x => x.CurrentGroupsId == 3);
+            return rdist.List(x => x.CurrentGroupsId == 3);
         }
-        
+
+
         public void EnterProduct(Products products)
         {
             int islem = rpro.Insert(new Products()
