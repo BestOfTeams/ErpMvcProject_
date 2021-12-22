@@ -36,18 +36,18 @@ namespace ErpMvcProject.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            /*roducts pro = null;*/
-            //List<SelectListItem> item = (from s in pm.GetDist()
-            //                             select new SelectListItem()
-            //                             {
-            //                                 Text = s.cName,
-            //                                 Value = s.Id.ToString()
+            Products pro = null;
+            List<SelectListItem> item = (from s in pm.GetDist()
+                                         select new SelectListItem()
+                                         {
+                                             Text = s.cName,
+                                             Value = s.Id.ToString()
 
-            //                             }).ToList();
-            //item.Find(x => x.Value == pro.cDispId.Id.ToString()).Selected=true;
-            //TempData["dist"] = item;
-            //ViewBag.distributors = item;
-            //ViewBag.Title = "Create";
+                                         }).ToList();
+            //item.Find(x => x.Value == pro.cDispId.Id.ToString()).Selected = true;
+            TempData["dist"] = item;
+            ViewBag.distributors = item;
+            ViewBag.Title = "Create";
 
             return View();
         }

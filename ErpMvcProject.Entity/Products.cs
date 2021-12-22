@@ -25,7 +25,8 @@ namespace ErpMvcProject.Entity
         public decimal ExposureTime { get; set; }
 
         //cariler ile bir e çok ilişki burası çoklu kısım
-      //  public int cDispId { get; set; }
+      // public int cDispId { get; set; }
+        
         public virtual Current cDispId { get; set; }
 
     }
