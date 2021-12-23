@@ -2473,7 +2473,6 @@
     <Content Include="Views\Shared\_AsidePartial.cshtml" />
     <Content Include="Views\Product\Update.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
-    <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Doctor\DoctorList.cshtml" />
     <Content Include="Views\Doctor\DoctorUpdate.cshtml" />
     <Content Include="Views\Doctor\DoctorDelete.cshtml" />

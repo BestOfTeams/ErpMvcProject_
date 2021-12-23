@@ -24,6 +24,7 @@ namespace ErpMvcProject.BusinessLayer
         }
 
 
+
         public void EnterProduct(Products products)
         {
             int islem = rpro.Insert(new Products()
@@ -40,8 +41,32 @@ namespace ErpMvcProject.BusinessLayer
             }) ;
           
         }
+        public void UpdateProduct(Products products,int? id)
+        {
+            Products pId = rpro.Find(x=> x.Id==id);
+            pId.PName = products.PName;
+            pId.PDiscription = products.PDiscription;
+            pId.SalePrice = products.SalePrice;
+            pId.BuyingPrice = products.BuyingPrice;
+            pId.BoxContents = products.BoxContents;
+            pId.cDispId = products.cDispId;
+            pId.ExposureTime = products.ExposureTime;
+            pId.isActive = products.isActive;
+            pId.UpdateDate = DateTime.Now;
+            int update = rpro.Update(pId);
+        }
+        public Products FindUpdate(int? id)
+        {
+            return rpro.Find(x=> x.Id==id);
+        }
+        //public void Pcode()
+        //{
+            
+        //}
+
     }
 }
+
 // sorular
 //EcposureTime neden decimal 
 //Html.Dropdownfor neden kullanılamıyor

@@ -8,12 +8,12 @@
     //TempData["dist"] = dist;
     //ViewBag.distributors = dist;
     ViewBag.Title = "Create";
+    //Model.cDispId = new Current();
 }
 <link href="~/Content/Create.css" rel="stylesheet" />
 @using (Html.BeginForm()) {
 <div class="container">
-    <div class="row gutters">
-       
+    <div class="row gutters">      
         <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
             <div class="card h-100">
                 <div class="card-body">
@@ -30,8 +30,8 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label>Distributor</label>
-                                @Html.DropDownListFor(model=> model.cDispId, (List<SelectListItem>)ViewBag.distributors, new { @class = "form-control" })
-                               @*<input type="text" class="form-control" id="fullName"*@ placeholder="distributor">
+                                @Html.DropDownListFor(model=> model.cDispId.Id, ViewBag.distributors as List<SelectListItem>, new { @class = "form-control"})
+                               @*<input type="text" class="form-control" id="fullName" placeholder="distributor">*@
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

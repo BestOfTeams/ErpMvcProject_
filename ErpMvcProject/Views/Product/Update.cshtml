@@ -1,7 +1,106 @@
-﻿
+﻿@using ErpMvcProject.Entity
+@using ErpMvcProject.BusinessLayer
+@model Products
 @{
+    //ProductManager pm = new ProductManager();
+    //List<SelectListItem> dist = pm.AddDist();
+
+    //TempData["dist"] = dist;
+    //ViewBag.distributors = dist;
     ViewBag.Title = "Update";
+    //Model.cDispId = new Current();
+
+
 }
+<link href="~/Content/Create.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    <div class="input-group">
+        @if (ViewBag.Result != null)
+        {
+            <div class="alert alert-@ViewBag.Status" role="alert">
+                @ViewBag.Result
+            </div>
+        }
+    </div>
+    <div class="container">
+        <div class="row gutters">
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="mb-3 text-primary">Product Entry</h6>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Product Name</label>
+                                    @Html.TextBoxFor(model => model.PName, new { @class = "form-control", placeholder = "Product Name", id = "floatingInput" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Distributor</label>
+                                    @Html.DropDownListFor(model => model.cDispId.Id, ViewBag.distributors as List<SelectListItem>, new { @class = "form-control" })
+                                    @*<input type="text" class="form-control" id="fullName" placeholder="distributor">*@
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Description</label>
+                                    @Html.TextAreaFor(s => s.PDiscription, new { @class = "form-control", placeholder = " Description", cols = "30", rows = "10" })
+                                </div>
+                            </div>
 
-<h2>Update</h2>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Box Contents</label>
+                                    @Html.TextAreaFor(s => s.BoxContents, new { @class = "form-control", placeholder = " Description", cols = "30", rows = "10" })
+                                </div>
+                            </div>
 
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Sale Price</label>
+                                    @Html.TextBoxFor(model => model.SalePrice, new { @class = "form-control", placeholder = "$", id = "floatingInput" })
+                                </div>
+                            </div>
+
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Purchase Price</label>
+                                    @Html.TextBoxFor(model => model.BuyingPrice, new { @class = "form-control", placeholder = "$", id = "floatingInput" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+
+
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <br />
+                                    <label>Activity Status</label>
+                                    <input type="checkbox" name="checkbox" value="Active" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="text-right">
+                                    @Html.ActionLink("Go back", "Product", "Product", null, new { @class = "btn btn-secondary" })
+                                    <button class="btn btn-primary" type="submit">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="~/Scripts/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+    $("#aside").hide();
+</script>

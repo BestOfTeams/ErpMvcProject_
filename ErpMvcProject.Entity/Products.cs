@@ -23,7 +23,7 @@ namespace ErpMvcProject.Entity
         public decimal BuyingPrice { get; set; }       
         public decimal SalePrice { get; set; }
         public decimal ExposureTime { get; set; }
-
+        
         //cariler ile bir e çok ilişki burası çoklu kısım
       // public int cDispId { get; set; }
         

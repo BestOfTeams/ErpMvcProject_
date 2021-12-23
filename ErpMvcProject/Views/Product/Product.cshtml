@@ -18,7 +18,7 @@
             <th scope="col">SalePrice</th>
             <th scope="col">Update</th>
             <th scope="col">Delete</th>
-            <th scope="col">Details</th>
+            
         </tr>
     </thead>
     <tbody>
@@ -30,9 +30,9 @@
                 <td>@pro.PName</td>
                 <td>@pro.BuyingPrice</td>
                 <td>@pro.SalePrice</td>
-                <td>  @Html.ActionLink("Uptade", "Update", "Product", new { pId = pro.Id }, new { @class = "btn btn-primary" })</td>
+                <td>  @Html.ActionLink("Uptade & Details", "Update", "Product", new { pId = pro.Id }, new { @class = "btn btn-primary" })</td>
                 <td>  @Html.ActionLink("Delete", "Delete", "Product", new { pId = pro.Id }, new { @class = "btn btn-danger" })</td>
-                <td>  @Html.ActionLink("Details", "Details", "Product", new { pId = pro.Id }, new { @class = "btn btn-secondary" })</td>
+               
 
             </tr>
 
