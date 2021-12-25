@@ -54,14 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Company.cs" />
     <Compile Include="Employees.cs" />
     <Compile Include="EntityFramework\ErpMvcContext.cs" />
     <Compile Include="EntityFramework\MyInitializer.cs" />
     <Compile Include="EntityFramework\Repository.cs" />
     <Compile Include="EntityFramework\RepositoryBase.cs" />
     <Compile Include="enumDoctors.cs" />
-    <Compile Include="Numaralar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

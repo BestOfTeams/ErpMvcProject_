@@ -14,11 +14,14 @@ namespace ErpMvcProject.Entity
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public DateTime FirstDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTime? FirstDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
         //Current ile bir e çok iliki burası coklu kısım
-      //  public int CurrentId { get; set; }
-        public virtual Current CurrentId { get; set; }
+        //  public int CurrentId { get; set; }
+        
+        public int CurrentId { get; set; }
+        
+        public virtual Current Current { get; set; }
     }
 }

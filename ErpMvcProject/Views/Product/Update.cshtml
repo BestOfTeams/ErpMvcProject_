@@ -82,7 +82,9 @@
                                 <div class="form-group">
                                     <br />
                                     <label>Activity Status</label>
-                                    <input type="checkbox" name="checkbox" value="Active" />
+                                    @Html.CheckBoxFor(m => m.isActive, new { @checked = "checked" });
+                                    @*@Html.CheckBox("isActive", new { value = Model.isActive, @checked = false })*@
+                                    @*<input type="checkbox" name="checkbox" value="Active" />*@
                                 </div>
                             </div>
                         </div>

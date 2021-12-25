@@ -2472,15 +2472,10 @@
     <Content Include="Views\Product\Product.cshtml" />
     <Content Include="Views\Shared\_AsidePartial.cshtml" />
     <Content Include="Views\Product\Update.cshtml" />
-    <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Doctor\DoctorList.cshtml" />
     <Content Include="Views\Doctor\DoctorUpdate.cshtml" />
-    <Content Include="Views\Doctor\DoctorDelete.cshtml" />
-    <Content Include="Views\Doctor\DoctorDetails.cshtml" />
     <Content Include="Views\Employee\EmployeeList.cshtml" />
     <Content Include="Views\Employee\EmployeeUpdate.cshtml" />
-    <Content Include="Views\Employee\EmployeeDelete.cshtml" />
-    <Content Include="Views\Employee\EmployeeDetails.cshtml" />
     <Content Include="Views\Company\CompanyList.cshtml" />
     <Content Include="Views\Company\CompanyUpdate.cshtml" />
     <Content Include="Views\Company\CompanyDelete.cshtml" />
@@ -2488,9 +2483,11 @@
     <Content Include="Views\Hospital\HospitalList.cshtml" />
     <Content Include="Views\Hospital\HospitalUpdate.cshtml" />
     <Content Include="Views\Hospital\HospitalDelete.cshtml" />
-    <Content Include="Views\Hospital\HospitalDetails.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Shared\_AsidePartialFooter.cshtml" />
+    <Content Include="Views\Doctor\DoctorCreate.cshtml" />
+    <Content Include="Views\Employee\EmployeeCreate.cshtml" />
+    <Content Include="Views\Hospital\HospitalCreate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

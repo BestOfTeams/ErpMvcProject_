@@ -15,9 +15,9 @@
             <th scope="col">Phone Number</th>
             <th scope="col">Email Address</th>
             <th scope="col">Address</th>
-            <th scope="col">Update</th>
+            <th scope="col">Update & Details</th>
             <th scope="col">Delete</th>
-            <th scope="col">Details</th>
+           
         </tr>
     </thead>
     <tbody>
@@ -30,12 +30,9 @@
                 <td>@dl.cPhone</td>
                 <td>@dl.cMail</td>
                 <td>@dl.Address1</td>
-                <td>  @Html.ActionLink("Uptade", "Update", "Doctor", new { dId = dl.Id }, new { @class = "btn btn-primary" })</td>
-                <td>  @Html.ActionLink("Delete", "Delete", "Doctor", new { dId = dl.Id }, new { @class = "btn btn-danger" })</td>
-                <td>  @Html.ActionLink("Details", "Details", "Doctor", new { dId = dl.Id }, new { @class = "btn btn-secondary" })</td>
-
-            </tr>
-
+                <td>  @Html.ActionLink("Uptade & Details", "DoctorUpdate", "Doctor", new { dId = dl.Id }, new { @class = "btn btn-primary" })</td>
+                <td>   @Html.ActionLink("Delete", "DoctorDelete", new { dId = dl.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Kaydı silmek istiyor musunuz?');" })
+</tr>
         }
 
     </tbody>

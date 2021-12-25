@@ -1,4 +1,5 @@
-﻿using ErpMvcProject.DataAccessLayer.Entity;
+﻿using ErpMvcProject.BusinessLayer;
+using ErpMvcProject.DataAccessLayer.Entity;
 using ErpMvcProject.Entity;
 using System;
 using System.Collections.Generic;
@@ -167,7 +168,7 @@ namespace ErpMvcProject.DataAccessLayer.EntityFramework
                 EmployeeDetails ed = new EmployeeDetails();
                 ed.FirstDate = FakeData.DateTimeData.GetDatetime(DateTime.Now.AddYears(-3), DateTime.Now);
                 ed.EndDate = FakeData.DateTimeData.GetDatetime(DateTime.Now.AddYears(-2), DateTime.Now);
-                ed.CurrentId = employeeList[i];
+                ed.CurrentId = employeeList[i].Id;
                 context.employeeDetails.Add(ed);
             } 
             context.SaveChanges();

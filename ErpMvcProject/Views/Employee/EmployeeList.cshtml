@@ -1,8 +1,9 @@
 ﻿@using ErpMvcProject.BusinessLayer
 @using ErpMvcProject.Entity
+@model List<ViewModel>
 @{
-    EmployeeManager em = new EmployeeManager();
-    List<Current> employeeList = em.GetEmployees().ToList();
+//EmployeeManager em = new EmployeeManager();
+//List<Current> employeeList = em.GetEmployees().ToList();
 
 }
 
@@ -21,18 +22,18 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var dl in employeeList)
+        @foreach (var vM in Model)
         {
             <tr>
-                <th scope="row">@dl.Id</th>
-                <td>@dl.cName</td>
-                <td>@dl.Title</td>
-                <td>@dl.cPhone</td>
-                <td>@dl.cMail</td>
-                <td>@dl.Address1</td>
-                <td>  @Html.ActionLink("Uptade", "Update", "Employee", new { dId = dl.Id }, new { @class = "btn btn-primary" })</td>
-                <td>  @Html.ActionLink("Delete", "Delete", "Employee", new { dId = dl.Id }, new { @class = "btn btn-danger" })</td>
-                <td>  @Html.ActionLink("Details", "Details", "Employee", new { dId = dl.Id }, new { @class = "btn btn-secondary" })</td>
+                <th scope="row">@vM.current.Id</th>
+                <td>@vM.current.cName</td>
+                <td>@vM.current.Title</td>
+                <td>@vM.current.cPhone</td>
+                <td>@vM.current.cMail</td>
+                <td>@vM.current.Address1</td>
+                <td>  @Html.ActionLink("Uptade & Details", "EmployeeUpdate", "Employee", new { eId = vM.current.Id }, new { @class = "btn btn-primary" })</td>
+                <td>   @Html.ActionLink("Fired", "EmployeeDelete", new { eId = vM.current.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Kaydı silmek istiyor musunuz?');" })</td>
+                
 
             </tr>
 

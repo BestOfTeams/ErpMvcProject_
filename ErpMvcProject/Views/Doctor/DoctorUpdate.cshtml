@@ -1,7 +1,97 @@
-﻿
+﻿@using ErpMvcProject.Entity
+@using ErpMvcProject.BusinessLayer
+@model Current
 @{
     ViewBag.Title = "DoctorUpdate";
 }
 
-<h2>DoctorUpdate</h2>
+<link href="~/Content/Create.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model=>model.Id)
+    <div class="container">
+        <div class="row gutters">
+            <div class="col-xl-12 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="mb-3 text-primary">Doctor Update & Details</h6>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Dr Name</label>
+                                    @Html.TextBoxFor(model => model.cName, new { @class = "form-control", placeholder = "Dr Name", id = "floatingInput" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Title</label>
+                                    @Html.DropDownListFor(model => model.Title, ViewBag.DoctorTitle as List<SelectListItem>, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>First Address</label>
+                                    @Html.TextAreaFor(s => s.Address1, new { @class = "form-control", placeholder = "First Address", cols = "30", rows = "10" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Second Address</label>
+                                    @Html.TextAreaFor(s => s.Address2, new { @class = "form-control", placeholder = "Second Address", cols = "30", rows = "10" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>TcId</label>
+                                    @Html.TextBoxFor(model => model.TcId, new { @class = "form-control", placeholder = "TcId", id = "floatingInput" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>City</label>
+                                    @Html.DropDownListFor(model => model.CitiesId, ViewBag.city as List<SelectListItem>, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    @Html.TextBoxFor(model => model.cPhone, new { @class = "form-control", placeholder = "Phone Number", id = "floatingInput" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Mobile Phone Number</label>
+                                    @Html.TextBoxFor(model => model.sMPhone1, new { @class = "form-control", placeholder = "Mobile Phone Number", id = "floatingInput" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>E-mail Address</label>
+                                    @Html.TextBoxFor(model => model.cMail, new { @class = "form-control", placeholder = "E-mail Address", id = "floatingInput" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <br />
+                                    <label>Activity Status</label>
+                                    @Html.CheckBoxFor(m => m.isActive, new { @checked = "checked" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="text-right">
+                                    @Html.ActionLink("Go back", "DoctorList", "Doctor", null, new { @class = "btn btn-secondary" })
+                                    <button class="btn btn-primary" type="submit">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
 

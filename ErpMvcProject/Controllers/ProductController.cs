@@ -45,11 +45,27 @@ namespace ErpMvcProject.Controllers
             return RedirectToAction("Product", "Product",p);
 
         }
-        public ActionResult Delete()
+        //[HttpGet]
+        //public ActionResult Delete(int? pid)
+        //{
+        //    Products pro = pm.GetProducts().FirstOrDefault(x => x.Id == pid);
+
+        //    return View(pro);
+        //}
+        [HttpGet]
+        public ActionResult Delete(int? id)
         {
-            
-            return View();
-        }       
+
+           // Products p = pm.FindUpdate(pid);
+            pm.DeleteProduct(id);
+            return RedirectToAction("Product", "Product");
+        }
+        //[HttpPost]
+        //public ActionResult Delete(int pid)
+        //{
+        //    pm.DeleteProduct(pid);
+        //    return RedirectToAction("Product", "Product");
+        //}
         [HttpGet]
         public ActionResult Create()
         {
@@ -61,8 +77,7 @@ namespace ErpMvcProject.Controllers
                                              Value = s.Id.ToString(),
                                              Text = s.cName
 
-                                         }).ToList();
-       
+                                         }).ToList();      
             TempData["dist"] = item;
             ViewBag.distributors = item;
             return View();
@@ -71,7 +86,7 @@ namespace ErpMvcProject.Controllers
         public ActionResult Create(Products products)
         {
             
-            ProductManager pm = new ProductManager();
+           
             var current = pm.GetDist().Where(x=>x.Id==products.cDispId.Id).FirstOrDefault();
             products.cDispId = current;
             pm.EnterProduct(products);

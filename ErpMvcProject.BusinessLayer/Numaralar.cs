@@ -1,21 +1,23 @@
 ﻿using ErpMvcProject.DataAccessLayer.Entity;
+using ErpMvcProject.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ErpMvcProject.DataAccessLayer
+namespace ErpMvcProject.BusinessLayer
 {
-    internal class Numaralar
+    public class Numaralar
     {
-        private readonly ErpMvcContext erp = new ErpMvcContext();
 
+        ErpMvcContext context = new ErpMvcContext();
         public string CCodeHospital()
         {
             try
             {
-                var numara = (from s in erp.currents orderby s.Id descending select s).First().Id;
+               
+                var numara = context.currents.OrderByDescending(x => x.Id).First().Id;
                 numara++;
                 string num = "H" + numara.ToString().PadLeft(8, '0');
                 return num;
@@ -31,7 +33,7 @@ namespace ErpMvcProject.DataAccessLayer
         {
             try
             {
-                var numara = (from s in erp.currents orderby s.Id descending select s).First().Id;
+                var numara = context.currents.OrderByDescending(x => x.Id).First().Id;
                 numara++;
                 string num = "D" + numara.ToString().PadLeft(8, '0');
                 return num;
@@ -47,7 +49,7 @@ namespace ErpMvcProject.DataAccessLayer
         {
             try
             {
-                var numara = (from s in erp.currents orderby s.Id descending select s).First().Id;
+                var numara = context.currents.OrderByDescending(x => x.Id).First().Id;
                 numara++;
                 string num = "E" + numara.ToString().PadLeft(8, '0');
                 return num;
@@ -63,7 +65,7 @@ namespace ErpMvcProject.DataAccessLayer
         {
             try
             {
-                var numara = (from s in erp.currents orderby s.Id descending select s).First().Id;
+                var numara = context.currents.OrderByDescending(x => x.Id).First().Id;
                 numara++;
                 string num = "C" + numara.ToString().PadLeft(8, '0');
                 return num;
@@ -79,7 +81,7 @@ namespace ErpMvcProject.DataAccessLayer
         {
             try
             {
-                var numara = (from s in erp.currents orderby s.Id descending select s).First().Id;
+                var numara = context.currents.OrderByDescending(x => x.Id).First().Id;
                 numara++;
                 string num = "P" + numara.ToString().PadLeft(8, '0');
                 return num;
@@ -95,7 +97,7 @@ namespace ErpMvcProject.DataAccessLayer
         {
             try
             {
-                var numara = (from s in erp.stockEntryTops orderby s.Id descending select s).First().Id;
+                var numara = context.currents.OrderByDescending(x => x.Id).First().Id;
                 numara++;
                 string num = numara.ToString().PadLeft(8, '0');
                 return num;

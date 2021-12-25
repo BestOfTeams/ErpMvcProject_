@@ -59,6 +59,11 @@ namespace ErpMvcProject.BusinessLayer
         {
             return rpro.Find(x=> x.Id==id);
         }
+        public void DeleteProduct(int? id)
+        {
+            Products pId = rpro.Find(x => x.Id == id);
+            rpro.Delete(pId);
+        }
         //public void Pcode()
         //{
             

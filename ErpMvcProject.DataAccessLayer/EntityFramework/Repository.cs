@@ -51,5 +51,10 @@ namespace ErpMvcProject.DataAccessLayer.EntityFramework
         {
             return objSet.FirstOrDefault(Eresult);//FirstOrDefault : Bulduğun ilk değeri yada standart değeri olan null değer döndür.
         }
+        public T FindFirst(Expression<Func<T, bool>> Eresult)
+        {
+            return objSet.First(Eresult);//FirstOrDefault : Bulduğun ilk değeri yada standart değeri olan null değer döndür.
+        }
+
     }
 }
