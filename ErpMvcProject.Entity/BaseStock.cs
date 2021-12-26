@@ -19,8 +19,8 @@ namespace ErpMvcProject.Entity
         [StringLength(100)]
         public string ProductCode { get; set; }
 
-        public DateTime ProductionDate { get; set; }
-        public DateTime ExpiryDate { get; set; }
+        public DateTime? ProductionDate { get; set; }
+        public DateTime? ExpiryDate { get; set; }
 
     }
 }

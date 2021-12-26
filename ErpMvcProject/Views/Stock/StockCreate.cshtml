@@ -1,0 +1,75 @@
+﻿@using ErpMvcProject.BusinessLayer
+@model StockViewModel
+@{
+    ViewBag.Title = "StockCreate";
+}
+@using (Html.BeginForm())
+{
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="form-group">
+        <label>Invoice Number</label>
+        @Html.TextBoxFor(model => model.stockEntryTop.InvoiceNumber, new { @class = "form-control", placeholder = "Invoice Number", id = "floatingInput" })
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="form-group">
+        <label>Invoice Date</label>
+        @Html.TextBoxFor(model => model.stockEntryTop.InvoiceDate, new { @class = "form-control", type = "date", placeholder = "" })
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="form-group">
+        <label>Production Date</label>
+        @Html.TextBoxFor(model => model.stockEntryLower.ProductionDate, new { @class = "form-control", type = "date", placeholder = "" })
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="form-group">
+        <label>Exp. Date</label>
+        @Html.TextBoxFor(model => model.stockEntryLower.ExpiryDate, new { @class = "form-control", type = "date", placeholder = "" })
+    </div>
+</div>
+
+
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="form-group">
+        <label>Distributor</label>
+        @Html.DropDownListFor(model => model.stockEntryTop.currentId, ViewBag.Dist as List<SelectListItem>, new { @class = "form-control" })
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="form-group">
+        <label>Description</label>
+        @Html.TextAreaFor(s => s.stockEntryTop.Description, new { @class = "form-control", placeholder = "Description", cols = "30", rows = "10" })
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="form-group">
+        <label>Product Code</label>
+        @Html.DropDownListFor(model => model.stockEntryLower.ProductCode, ViewBag.Pro as List<SelectListItem>, new { @class = "form-control" })
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="form-group">
+        <label>Lot/SeriNumber</label>
+        @Html.TextBoxFor(model => model.stockEntryLower.Lot, new { @class = "form-control", placeholder = "Lot/SeriNumber", id = "floatingInput" })
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="form-group">
+        <label>Count</label>
+        @Html.TextBoxFor(model => model.stockEntryLower.Count, new { @class = "form-control", placeholder = "Count", id = "floatingInput" })
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+    <div class="form-group">
+        <label>Buying Price</label>
+        @Html.TextBoxFor(model => model.stockEntryLower.BuyingPrice, new { @class = "form-control", placeholder = "Buying Price", id = "floatingInput" })
+    </div>
+</div>
+<br />
+<hr />
+@Html.ActionLink("Go back", "HospitalList", "Hospital", null, new { @class = "btn btn-secondary" })
+<button class="btn btn-primary" type="submit">Create</button>
+
+}

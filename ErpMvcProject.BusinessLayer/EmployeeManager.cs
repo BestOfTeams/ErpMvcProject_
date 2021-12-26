@@ -16,7 +16,8 @@ namespace ErpMvcProject.BusinessLayer
         DateTime date = DateTime.Now;
         public List<Current> GetEmployees()
         {
-            return rcur.List(x => x.CurrentGroupsId == 2);
+          
+            return rcur.List(x => x.CurrentGroupsId == 2 && x.isActive==true);
         }
         public List<Cities> GetCities()
         {
@@ -75,7 +76,11 @@ namespace ErpMvcProject.BusinessLayer
         public void DeleteEmployee(int eId)
         {
             Current c = rcur.Find(x => x.Id == eId);
-            rcur.Delete(c);
+            EmployeeDetails e = red.Find(x => x.CurrentId == eId);
+            c.isActive = false;
+            e.EndDate = date;
+            red.Update(e);
+            rcur.Update(c);
         }
     }
 }

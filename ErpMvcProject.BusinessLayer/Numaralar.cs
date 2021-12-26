@@ -40,8 +40,7 @@ namespace ErpMvcProject.BusinessLayer
             }
             catch (Exception)
             {
-                return "D00000001";
-
+                return "D00000001";                
             }
         }
 
@@ -97,7 +96,7 @@ namespace ErpMvcProject.BusinessLayer
         {
             try
             {
-                var numara = context.currents.OrderByDescending(x => x.Id).First().Id;
+                var numara = context.stockStatuses.OrderByDescending(x => x.Id).First().Id;
                 numara++;
                 string num = numara.ToString().PadLeft(8, '0');
                 return num;

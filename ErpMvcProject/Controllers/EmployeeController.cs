@@ -21,6 +21,7 @@ namespace ErpMvcProject.Controllers
         }
         public ActionResult EmployeeList()
         {
+            em.GetEmployees();
             return View();
         }
         public ActionResult EmployeeCreate()

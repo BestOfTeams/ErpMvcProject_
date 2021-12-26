@@ -12,17 +12,18 @@ namespace ErpMvcProject.Entity
     public class StockEntryTop : BaseClass
     {
 
-        public int GeneralNumber { get; set; }
+        public string GeneralNumber { get; set; }
         public int EntryType { get; set; }
         [StringLength(50)]
         public string InvoiceNumber { get; set; }
         
         public string Description { get; set; }
-        public DateTime InvoiceDate { get; set; }
+        public DateTime? InvoiceDate { get; set; }
 
         //cariler ile bire çok ilişkide bura çoklu kısım
-      //  public int cId { get; set; }
-        public virtual Current cId { get; set; }
+        public int currentId { get; set; }
+
+        public virtual Current Current { get; set; }
 
         //carigruoplari ile burası çoklu kısım
        // public int cGroupId { get; set; }

@@ -183,10 +183,10 @@ namespace ErpMvcProject.DataAccessLayer.EntityFramework
                 pro.SalePrice = FakeData.NumberData.GetNumber(20, 100);
                 pro.isActive = true;
                 pro.PDiscription= FakeData.TextData.GetSentences(5);
-                pro.PGeneralNumber = FakeData.NumberData.GetNumber(1,100).ToString();
+                pro.PGeneralNumber = "P" + (a++).ToString().PadLeft(8, '0');
                 pro.PName = FakeData.NameData.GetCompanyName();
-                pro.PCode= "P" + (a++).ToString().PadLeft(8, '0');
-               // var numara = (from s in context.products orderby s.Id descending select s).First();
+                pro.PCode=  FakeData.NumberData.GetNumber(1, 100).ToString();
+                // var numara = (from s in context.products orderby s.Id descending select s).First();
                 context.products.Add(pro);
             }
             context.SaveChanges();
@@ -195,8 +195,8 @@ namespace ErpMvcProject.DataAccessLayer.EntityFramework
             for (int i = 0; i < 5; i++)
             {
                 StockEntryTop set = new StockEntryTop();
-                set.GeneralNumber = Convert.ToInt32((b++).ToString().PadLeft(8, '0'));
-                set.cId = companyList[i];
+                set.GeneralNumber = ((b++).ToString().PadLeft(8, '0'));
+                set.currentId = companyList[i].Id;
                 set.cGroupId = groupList[0];
               set.Description = FakeData.TextData.GetSentences(3);
                 set.InvoiceNumber = (b++).ToString().PadLeft(8, '0');
@@ -223,7 +223,7 @@ namespace ErpMvcProject.DataAccessLayer.EntityFramework
                 sel.GeneralNumber = Convert.ToInt32((b++).ToString().PadLeft(8, '0'));
               //  int number=(from s in erp.currents orderby s.Id descending select s).First().Id;
                 int number1=context.currents.OrderByDescending(x=>x.Id).First().Id;
-                sel.ProductCode = "P"+(number1+1).ToString().PadLeft(8, '0');
+                sel.ProductCode = FakeData.NumberData.GetNumber(1, 100).ToString();
                 sel.Lot = "1";
                 sel.Barcode = sel.ProductCode + " / " + sel.Lot;
                 context.stockEntryLowers.Add(sel);
@@ -236,7 +236,7 @@ namespace ErpMvcProject.DataAccessLayer.EntityFramework
                 ss.ShelfCount= FakeData.NumberData.GetNumber(20, 100);
                 ss.StockCount= FakeData.NumberData.GetNumber(20, 100);
                 ss.ConsigneeCount= FakeData.NumberData.GetNumber(20, 100);
-                ss.ProductCode= "P" + (po).ToString().PadLeft(8, '0');
+                ss.ProductCode= FakeData.NumberData.GetNumber(1, 100).ToString();
                 ss.Lot = "1";
                 ss.Barcode= ss.ProductCode + " / " + ss.Lot;
                 ss.StockCode = (po2).ToString().PadLeft(8, '0');

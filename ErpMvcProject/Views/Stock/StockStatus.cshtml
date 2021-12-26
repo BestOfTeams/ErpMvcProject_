@@ -1,0 +1,41 @@
+﻿@using ErpMvcProject.BusinessLayer
+@using ErpMvcProject.Entity
+@model List<StockStatus>
+@{
+    ViewBag.Title = "StockStatus";
+}
+
+<table class="table table-light table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Stock Code</th>
+            <th scope="col">Stock Count</th>
+            <th scope="col">Shelf Count</th>
+            <th scope="col">Branch Count</th>
+            <th scope="col">Consigne Count</th>
+            <th scope="col">Move</th>           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var vM in Model)
+        {
+        <tr>
+            <th scope="row">@vM.Id</th>
+            <td>@vM.StockCode</td>
+            <td>@vM.StockCount</td>
+            <td>@vM.ShelfCount</td>
+            <td>@vM.BranchCount</td>
+            <td>@vM.ConsigneeCount</td>
+            <td> @Html.ActionLink("Distribution", "DoctorUpdate", "Doctor", new { SId = vM.Id }, new { @class = "btn btn-primary" })</td>          
+        </tr>
+        }
+
+    </tbody>
+</table>
+<script type="text/javascript">
+
+    document.getElementById("Title").innerText = "Stock";
+</script>
+
+
