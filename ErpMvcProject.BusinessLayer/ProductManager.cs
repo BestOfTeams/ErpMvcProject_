@@ -20,7 +20,7 @@ namespace ErpMvcProject.BusinessLayer
         }
         public List<Current> GetDist()
         {
-            return rdist.List(x => x.CurrentGroupsId == 3);
+            return rdist.List(x => x.CurrentGroupsId == 3 && x.isActive==true);
         }
 
 

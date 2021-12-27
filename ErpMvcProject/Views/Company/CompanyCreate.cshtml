@@ -1,14 +1,15 @@
 ﻿@using ErpMvcProject.Entity
 @using ErpMvcProject.BusinessLayer
 @model Current
-@{
-    ViewBag.Title = "CompanyUpdate";
-}
 
+@{
+
+    ViewBag.Title = "CompanyCreate";
+
+}
 <link href="~/Content/Create.css" rel="stylesheet" />
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(s => s.Id);
 
     <div class="container">
         <div class="row gutters">
@@ -60,41 +61,41 @@
                                     <label>Phone Number</label>
                                     @Html.TextBoxFor(model => model.cPhone, new { @class = "form-control", placeholder = "Phone Number", id = "floatingInput" })
                                 </div>
-                            </div>
+                            </div>                        
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>E-mail Address</label>
                                     @Html.TextBoxFor(model => model.cMail, new { @class = "form-control", placeholder = "E-mail Address", id = "floatingInput" })
                                 </div>
                             </div>
-
+                          
                             <br />
                             <label>Authorized Person</label>
-                            <hr />
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label>Name-1</label>
-                                    @Html.TextBoxFor(model => model.sName1, new { @class = "form-control", placeholder = "Name", id = "floatingInput" })
+                            <hr />                          
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Name-1</label>
+                                        @Html.TextBoxFor(model => model.sName1, new { @class = "form-control", placeholder = "Name", id = "floatingInput" })
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label>Phone Number-1</label>
-                                    @Html.TextBoxFor(model => model.sPhone1, new { @class = "form-control", placeholder = "Phone Number", id = "floatingInput" })
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Phone Number-1</label>
+                                        @Html.TextBoxFor(model => model.sPhone1, new { @class = "form-control", placeholder = "Phone Number", id = "floatingInput" })
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label>E-Mail-1</label>
-                                    @Html.TextBoxFor(model => model.sMail1, new { @class = "form-control", placeholder = "E-mail Address", id = "floatingInput" })
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>E-Mail-1</label>
+                                        @Html.TextBoxFor(model => model.sMail1, new { @class = "form-control", placeholder = "E-mail Address", id = "floatingInput" })
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label>Department1</label>
-                                    @Html.DropDownListFor(model => model.sDepartment1, ViewBag.dep as List<SelectListItem>, new { @class = "form-control" })
-                                </div>
-                            </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Department1</label>
+                                        @Html.DropDownListFor(model => model.sDepartment1, ViewBag.dep as List<SelectListItem>, new { @class = "form-control" })
+                                    </div>
+                                </div>        
                             <br /><br /><hr /><br />
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
@@ -154,7 +155,7 @@
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="text-right">
                                     @Html.ActionLink("Go back", "CompanyList", "Company", null, new { @class = "btn btn-secondary" })
-                                    <button class="btn btn-danger" type="submit">Update</button>
+                                    <button class="btn btn-primary" type="submit">Create</button>
                                 </div>
                             </div>
                         </div>

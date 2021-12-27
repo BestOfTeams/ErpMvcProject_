@@ -29,7 +29,7 @@ namespace ErpMvcProject.BusinessLayer
         }
         public List<Current> GetCurrent()
         {
-            return rcur.List(x => x.CurrentGroupsId == 3 && x.cTypeId == 1);
+            return rcur.List(x => x.CurrentGroupsId == 3 && x.cTypeId == 1 && x.isActive==true);
         }
         public List<Products> GetProduct()
         {

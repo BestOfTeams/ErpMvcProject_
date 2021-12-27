@@ -2479,11 +2479,8 @@
     <Content Include="Views\Employee\EmployeeUpdate.cshtml" />
     <Content Include="Views\Company\CompanyList.cshtml" />
     <Content Include="Views\Company\CompanyUpdate.cshtml" />
-    <Content Include="Views\Company\CompanyDelete.cshtml" />
-    <Content Include="Views\Company\CompanyDetails.cshtml" />
     <Content Include="Views\Hospital\HospitalList.cshtml" />
     <Content Include="Views\Hospital\HospitalUpdate.cshtml" />
-    <Content Include="Views\Hospital\HospitalDelete.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Shared\_AsidePartialFooter.cshtml" />
     <Content Include="Views\Doctor\DoctorCreate.cshtml" />
@@ -2491,6 +2488,7 @@
     <Content Include="Views\Hospital\HospitalCreate.cshtml" />
     <Content Include="Views\Stock\StockStatus.cshtml" />
     <Content Include="Views\Stock\StockCreate.cshtml" />
+    <Content Include="Views\Company\CompanyCreate.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

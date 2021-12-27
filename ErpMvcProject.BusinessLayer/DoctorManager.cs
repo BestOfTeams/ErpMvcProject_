@@ -15,7 +15,7 @@ namespace ErpMvcProject.BusinessLayer
         DateTime date = DateTime.Now;
         public List<Current> GetDoctors()
         {
-            return rcur.List(x => x.CurrentGroupsId == 1);
+            return rcur.List(x => x.CurrentGroupsId == 1 && x.isActive==true);
         }
         public List<Cities> GetCities()
         {

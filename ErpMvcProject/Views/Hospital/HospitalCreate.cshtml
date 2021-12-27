@@ -23,13 +23,13 @@
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>Hospital Name</label>
-                                    @Html.TextBoxFor(model => model.cName, new { @class = "form-control", placeholder = "Employee Name", id = "floatingInput" })
+                                    @Html.TextBoxFor(model => model.cName, new { @class = "form-control", placeholder = "Hospital Name", id = "floatingInput" })
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
-                                    <label>Title</label>
-                                    @Html.DropDownListFor(model => model.Title, ViewBag.DepTitle as List<SelectListItem>, new { @class = "form-control" })
+                                    <label>Tax Number</label>
+                                    @Html.TextBoxFor(model => model.TcId, new { @class = "form-control", placeholder = "Tax Number", id = "floatingInput" })
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -44,12 +44,7 @@
                                     @Html.TextAreaFor(s => s.Address2, new { @class = "form-control", placeholder = "Second Address", cols = "30", rows = "10" })
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label>TcId</label>
-                                    @Html.TextBoxFor(model => model.TcId, new { @class = "form-control", placeholder = "TcId", id = "floatingInput" })
-                                </div>
-                            </div>
+                            
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>City</label>
@@ -64,27 +59,13 @@
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
-                                    <label>Mobile Phone Number</label>
-                                    @Html.TextBoxFor(model => model.sMPhone1, new { @class = "form-control", placeholder = "Mobile Phone Number", id = "floatingInput" })
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
                                     <label>E-mail Address</label>
                                     @Html.TextBoxFor(model => model.cMail, new { @class = "form-control", placeholder = "E-mail Address", id = "floatingInput" })
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <br />
-                                    <label>Activity Status</label>
-                                    @Html.CheckBoxFor(m => m.isActive, new { @checked = "checked" })
                                 </div>
                             </div>
                             <br />
                             <label>Authorized Person</label>
                             <hr />
-
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>Name-1</label>

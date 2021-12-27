@@ -57,7 +57,7 @@ namespace ErpMvcProject.Controllers
             svm.stockEntryTop.GeneralNumber = num.StockGeneralCode();
             svm.stockEntryLower.Barcode = svm.stockEntryLower.ProductCode + "/" + svm.stockEntryLower.Lot;
             sm.CreateStock(svm);
-            return RedirectToAction("DoctorList", "Doctor");
+            return RedirectToAction("StockStatus", "Stock");
         }
 
     }
