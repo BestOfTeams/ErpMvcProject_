@@ -65,6 +65,7 @@ namespace ErpMvcProject.Controllers
         [HttpPost]
         public ActionResult CompanyUpdate(Current current)
         {
+            Current c = cm.GetCompanies().FirstOrDefault(x => x.Id == current.Id);
             cm.UpdateCompany(current);
             return RedirectToAction("CompanyList", "Company");
         }

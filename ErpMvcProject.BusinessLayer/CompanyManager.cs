@@ -14,7 +14,14 @@ namespace ErpMvcProject.BusinessLayer
         Repository<Cities> rcity = new Repository<Cities>();
         public List<Current> GetCompanies()
         {
-            return rcur.List(x => x.CurrentGroupsId == 3 && x.isActive == true);
+            List<Current> cur= rcur.List(x => x.CurrentGroupsId == 3 && x.isActive == true);
+
+            //foreach (Current item in cur)
+            //{
+            //    item.cTypeId
+            //}
+
+            return cur;
         }
         public List<Cities> GetCities()
         {
@@ -85,11 +92,11 @@ namespace ErpMvcProject.BusinessLayer
 
         public void CompanyDeleted(Current current)
         {
-            Current c = GetCompanies().FirstOrDefault(x => x.Id == current.Id);
-            c.UpdateDate = date;
-            c.UpdateUserId = 1;
-            c.isActive = false;
-            rcur.Update(c);
+            //Current c = GetCompanies().FirstOrDefault(x => x.Id == current.Id);
+            current.UpdateDate = date;
+            current.UpdateUserId = 1;
+            current.isActive = false;
+            rcur.Update(current);
         }
     }
 }

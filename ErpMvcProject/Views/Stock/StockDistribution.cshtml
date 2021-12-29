@@ -1,0 +1,73 @@
+﻿@using ErpMvcProject.BusinessLayer
+@using ErpMvcProject.Entity
+@model StockStatus
+@{
+    ViewBag.Title = "StockDistribution";
+}
+
+<link href="~/Content/Create.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.Id)
+    <div class="container">
+        <div class="row gutters">
+            <div class="col-xl-12 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="mb-3 text-primary">Stock Control</h6>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Stock Code</label>
+                                    @Html.TextBoxFor(model => model.StockCode, new { @class = "form-control", placeholder = "Stock Code", id = "floatingInput" , disabled = "true" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label>Barcode</label>
+                                    @Html.TextBoxFor(model => model.Barcode, new { @class = "form-control", placeholder = "Barcode", id = "floatingInput", disabled = "true" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 ">
+                                <div class="form-group">
+                                    <label>Stock Count</label>
+                                    @Html.TextBoxFor(model => model.StockCount, new { @class = "form-control", placeholder = "Barcode", id = "floatingInput"})
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-10">
+                                <div class="form-group">
+                                    <label>Shelf Count :</label>
+                                    @Html.EditorFor(model => model.ShelfCount, new { @class = "form-control", id = "floatingInput" })                                  
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-10 ">
+                                <div class="form-group">
+                                    <label>Branch Count :</label>
+                                    @Html.EditorFor(model => model.BranchCount, new { @class = "form-control", id = "floatingInput" })
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-10">
+                                <div class="form-group">
+                                    <label>Consignee Count :</label>
+                                    @Html.EditorFor(model => model.ConsigneeCount, new { @class = "form-control", id = "floatingInput" })
+                                </div>
+                            </div>
+                            <b style="color:red">@ViewBag.error</b>
+                            <div class="row gutters">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-10">
+                                    <div class="text-right">
+                                        @Html.ActionLink("Go back", "StockStatus", "Stock", null, new { @class = "btn btn-secondary" })
+                                        <button class="btn btn-info" type="submit">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

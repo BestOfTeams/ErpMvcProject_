@@ -86,8 +86,16 @@ namespace ErpMvcProject.BusinessLayer
                 });
             }
 
-
+        }
+        public void UpdateStatus(StockStatus stockStatus)
+        {
+            StockStatus ss = rss.Find(s => s.Id == stockStatus.Id);
+            ss.ShelfCount = stockStatus.ShelfCount;
+            ss.BranchCount = stockStatus.BranchCount;
+            ss.ConsigneeCount = stockStatus.ConsigneeCount;
+            rss.Update(ss);
 
         }
+
     }
 }

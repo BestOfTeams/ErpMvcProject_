@@ -59,6 +59,31 @@ namespace ErpMvcProject.Controllers
             sm.CreateStock(svm);
             return RedirectToAction("StockStatus", "Stock");
         }
+        [HttpGet]
+        public ActionResult StockDistribution(int SId)
+        {
+            StockStatus ss = sm.GetStockStatus().FirstOrDefault(x => x.Id == SId);
+            return View(ss);
+        }
+        [HttpPost]
+        public ActionResult StockDistribution(StockStatus stockStatus)
+        {
+            int top = stockStatus.ShelfCount + stockStatus.BranchCount + stockStatus.ConsigneeCount;
+            if (top > stockStatus.StockCount)
+            {
+                ViewBag.error = "Out Of Stock";
+                StockStatus ss = sm.GetStockStatus().FirstOrDefault(x => x.Id == stockStatus.Id);
+                return View(ss);
+            }
+            else
+            {
+                sm.UpdateStatus(stockStatus);
+                return RedirectToAction("StockStatus");
+            }
+           
+
+           
+        }
 
     }
 }

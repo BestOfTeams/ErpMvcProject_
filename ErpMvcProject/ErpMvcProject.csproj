@@ -2489,6 +2489,7 @@
     <Content Include="Views\Stock\StockStatus.cshtml" />
     <Content Include="Views\Stock\StockCreate.cshtml" />
     <Content Include="Views\Company\CompanyCreate.cshtml" />
+    <Content Include="Views\Stock\StockDistribution.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
