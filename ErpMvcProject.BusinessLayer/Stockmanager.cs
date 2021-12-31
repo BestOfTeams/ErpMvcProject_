@@ -72,7 +72,7 @@ namespace ErpMvcProject.BusinessLayer
             if (sss.Count > 0)
             {
                
-
+                    
                 StockStatus ss = rss.Find(x => x.Barcode ==svm.stockEntryLower.Barcode);
                 ss.StockCount = (from s in sel select s.Count).Sum();
                 rss.Update(ss);
@@ -169,11 +169,10 @@ namespace ErpMvcProject.BusinessLayer
             {
                 rss.Insert(new StockStatus
                 {
-
                     Lot = svm.stockEntryLower.Lot,
                     Barcode = svm.stockEntryLower.ProductCode + "/" + svm.stockEntryLower.Lot,
                     ProductCode = svm.stockEntryLower.ProductCode,
-                    StockCode = svm.stockEntryTop.GeneralNumber,
+                    StockCode = num.StockGeneralCode(),
                     StockCount = (from s in sel select s.Count).Sum(),
                 });
             }
