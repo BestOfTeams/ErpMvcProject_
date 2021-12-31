@@ -18,6 +18,7 @@ namespace ErpMvcProject.Entity
         public string InvoiceNumber { get; set; }
         
         public string Description { get; set; }
+        
         public DateTime? InvoiceDate { get; set; }
 
         //cariler ile bire çok ilişkide bura çoklu kısım

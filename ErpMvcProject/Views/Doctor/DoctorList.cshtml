@@ -5,39 +5,42 @@
     List<Current> doctorlist = dm.GetDoctors().ToList();
 
 }
-
-<table class="table table-light table-striped">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Title</th>
-            <th scope="col">Phone Number</th>
-            <th scope="col">Email Address</th>
-            <th scope="col">Address</th>
-            <th scope="col">Update & Details</th>
-            <th scope="col">Delete</th>           
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var dl in doctorlist)
-        {
+@Html.Partial("_PartialAside")
+<div class="container">
+    <h2>Doctors</h2>
+    <table class="table table-light table-striped">
+        <thead>
             <tr>
-                <th scope="row">@dl.Id</th>
-                <td>@dl.cName</td>
-                <td>@dl.Title</td>
-                <td>@dl.cPhone</td>
-                <td>@dl.cMail</td>
-                <td>@dl.Address1</td>
-                <td>  @Html.ActionLink("Uptade & Details", "DoctorUpdate", "Doctor", new { dId = dl.Id }, new { @class = "btn btn-primary" })</td>
-                <td>   @Html.ActionLink("Delete", "DoctorDelete", new { dId = dl.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Kaydı silmek istiyor musunuz?');" })
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Title</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Email Address</th>
+                <th scope="col">Address</th>
+                <th scope="col">Update & Details</th>
+                <th scope="col">Delete</th>
             </tr>
-        }
+        </thead>
+        <tbody>
+            @foreach (var dl in doctorlist)
+            {
+                <tr>
+                    <th scope="row">@dl.Id</th>
+                    <td>@dl.cName</td>
+                    <td>@dl.Title</td>
+                    <td>@dl.cPhone</td>
+                    <td>@dl.cMail</td>
+                    <td>@dl.Address1</td>
+                    <td>  @Html.ActionLink("Uptade & Details", "DoctorUpdate", "Doctor", new { dId = dl.Id }, new { @class = "btn btn-primary" })</td>
+                    <td>   @Html.ActionLink("Delete", "DoctorDelete", new { dId = dl.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Kaydı silmek istiyor musunuz?');" })
+                </tr>
+            }
 
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
+
 <script type="text/javascript">
 
     document.getElementById("Title").innerText = "Doctors";
 </script>
-

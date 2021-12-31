@@ -1,0 +1,39 @@
+﻿@using ErpMvcProject.Entity
+
+@model List<StockEntryTop>
+@{
+    ViewBag.Title = "StockListUpdate";
+}
+@Html.Partial("_PartialAside")
+<div class="container">
+    <table class="table table-light table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">General Number</th>
+                <th scope="col">Invoice Number</th>
+                <th scope="col">desc</th>
+                <th scope="col">Invoice Date</th>
+                <th scope="col">Update & Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vM in Model)
+            {
+                <tr>
+                    <th scope="row">@vM.Id</th>
+                    <td>@vM.GeneralNumber</td>
+                    <td>@vM.InvoiceNumber</td>
+                    <td>@vM.Description</td>
+                    <td>@vM.InvoiceDate</td>
+
+                    <td> @Html.ActionLink("Update & Details", "StockUpdate", "Stock", new { gm = vM.GeneralNumber }, new { @class = "btn btn-info" })</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    document.getElementById("Title").innerText = "Stock";
+</script>
+

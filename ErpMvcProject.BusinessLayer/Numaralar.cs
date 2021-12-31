@@ -107,5 +107,20 @@ namespace ErpMvcProject.BusinessLayer
 
             }
         }
+        public string StockGeneralNumber()
+        {
+            try
+            {
+                var numara = context.stockEntryTops.OrderByDescending(x => x.Id).First().Id;
+                numara++;
+                string num = numara.ToString().PadLeft(8, '0');
+                return num;
+            }
+            catch (Exception)
+            {
+                return "00000001";
+
+            }
+        }
     }
 }

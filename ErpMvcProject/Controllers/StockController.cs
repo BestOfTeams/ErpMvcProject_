@@ -42,19 +42,17 @@ namespace ErpMvcProject.Controllers
                                                 Text = s.PCode
 
                                             }).ToList();
-
-
             ViewBag.Dist = dist;
             TempData["Dist"] = dist;
             ViewBag.Pro = proCode;
             TempData["pro"] = proCode;
-
             return View();
         }
         [HttpPost]
         public ActionResult StockCreate(StockViewModel svm)
         {
-            svm.stockEntryTop.GeneralNumber = num.StockGeneralCode();
+            svm.stockEntryTop.GeneralNumber = num.StockGeneralNumber();
+            
             svm.stockEntryLower.Barcode = svm.stockEntryLower.ProductCode + "/" + svm.stockEntryLower.Lot;
             sm.CreateStock(svm);
             return RedirectToAction("StockStatus", "Stock");
@@ -79,11 +77,42 @@ namespace ErpMvcProject.Controllers
             {
                 sm.UpdateStatus(stockStatus);
                 return RedirectToAction("StockStatus");
-            }
-           
-
-           
+            }        
         }
+        public ActionResult StockListUpdate()
+        {
+            List<StockEntryTop> list = sm.GetStockEntryTop().ToList();
+            return View(list);
+        }
+        public ActionResult StockUpdate(string gm)
+        {
+           StockViewModel svm= sm.SVM(gm);
+            List<SelectListItem> dist = (from s in sm.GetCurrent()
+                                         select new SelectListItem()
+                                         {
 
+                                             Value = s.Id.ToString(),
+                                             Text = s.cName
+
+                                         }).ToList();
+            List<SelectListItem> proCode = (from s in sm.GetProduct()
+                                            select new SelectListItem()
+                                            {
+                                                Value = s.PCode,
+                                                Text = s.PCode
+                                            }).ToList();
+            ViewBag.Dist = dist;
+            TempData["Dist"] = dist;
+            ViewBag.Pro = proCode;
+            TempData["pro"] = proCode;
+            return View(svm);
+        }
+        [HttpPost]
+        public ActionResult StockUpdate(StockViewModel svm)
+        {
+
+            sm.SVMUpdate(svm);
+            return RedirectToAction("StockListUpdate");
+        }
     }
 }

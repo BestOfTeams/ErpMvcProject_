@@ -2490,6 +2490,9 @@
     <Content Include="Views\Stock\StockCreate.cshtml" />
     <Content Include="Views\Company\CompanyCreate.cshtml" />
     <Content Include="Views\Stock\StockDistribution.cshtml" />
+    <Content Include="Views\Stock\StockListUpdate.cshtml" />
+    <Content Include="Views\Stock\StockUpdate.cshtml" />
+    <Content Include="Views\Shared\_PartialAside.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

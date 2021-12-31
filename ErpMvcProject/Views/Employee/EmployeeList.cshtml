@@ -1,43 +1,49 @@
 ﻿@using ErpMvcProject.BusinessLayer
 @using ErpMvcProject.Entity
-@*@model List<ViewModel>*@
+@model List<ViewModel>
 @{
     EmployeeManager em = new EmployeeManager();
     List<Current> employeeList = em.GetEmployees().ToList();
+
 }
+@Html.Partial("_PartialAside")
 
-<table class="table table-light table-striped">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Title</th>
-            <th scope="col">Phone Number</th>
-            <th scope="col">Email Address</th>
-            <th scope="col">Address</th>
-            <th scope="col">Update</th>
-            <th scope="col">Delete</th>
-            <th scope="col">Details</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var vM in employeeList)
-        {
+<div class="container">
+    <h2>Employees</h2>
+    <table class="table table-light table-striped">
+        <thead>
             <tr>
-                <th scope="row">@vM.Id</th>
-                <td>@vM.cName</td>
-                <td>@vM.Title</td>
-                <td>@vM.cPhone</td>
-                <td>@vM.cMail</td>
-                <td>@vM.Address1</td>
-                <td>  @Html.ActionLink("Uptade & Details", "EmployeeUpdate", "Employee", new { eId = vM.Id }, new { @class = "btn btn-primary" })</td>
-                <td>   @Html.ActionLink("Fired", "EmployeeDelete", new { eId = vM.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Kaydı silmek istiyor musunuz?');" })</td>
-                
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Title</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Email Address</th>
+                <th scope="col">Address</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Details</th>
             </tr>
-        }
+        </thead>
+        <tbody>
+            @foreach (var vM in employeeList)
+            {
+                <tr>
+                    <th scope="row">@vM.Id</th>
+                    <td>@vM.cName</td>
+                    <td>@vM.Title</td>
+                    <td>@vM.cPhone</td>
+                    <td>@vM.cMail</td>
+                    <td>@vM.Address1</td>
+                    <td>  @Html.ActionLink("Uptade & Details", "EmployeeUpdate", "Employee", new { eId = vM.Id }, new { @class = "btn btn-primary" })</td>
+                    <td>   @Html.ActionLink("Fired", "EmployeeDelete", new { eId = vM.Id }, new { @class = "btn btn-danger", onclick = "return confirm('Kaydı silmek istiyor musunuz?');" })</td>
 
-    </tbody>
-</table>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
 <script type="text/javascript">
 
     document.getElementById("Title").innerText = "Employees";

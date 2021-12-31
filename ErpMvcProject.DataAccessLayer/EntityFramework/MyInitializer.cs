@@ -157,8 +157,7 @@ namespace ErpMvcProject.DataAccessLayer.EntityFramework
                 {
                     current.cTypeId = 1;
                     current.cCode = "C" + co++.ToString().PadLeft(8, '0');// rnd.Next(Enum.GetNames(typeof(Company)).Length);
-                }
-                
+                }                
                 context.currents.Add(current);
             }
             context.SaveChanges();
@@ -220,7 +219,7 @@ namespace ErpMvcProject.DataAccessLayer.EntityFramework
                 sel.ProductionDate = FakeData.DateTimeData.GetDatetime(DateTime.Now, DateTime.Now.AddYears(1));
                 sel.OrderNumber = FakeData.NumberData.GetNumber(1, 100);
                 sel.Note = FakeData.TextData.GetSentences(2);
-                sel.GeneralNumber = Convert.ToInt32((b++).ToString().PadLeft(8, '0'));
+                sel.GeneralNumber = (b++).ToString().PadLeft(8, '0');
               //  int number=(from s in erp.currents orderby s.Id descending select s).First().Id;
                 int number1=context.currents.OrderByDescending(x=>x.Id).First().Id;
                 sel.ProductCode = FakeData.NumberData.GetNumber(1, 100).ToString();

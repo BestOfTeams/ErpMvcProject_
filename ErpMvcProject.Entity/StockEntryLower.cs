@@ -12,7 +12,7 @@ namespace ErpMvcProject.Entity
     public class StockEntryLower:BaseStock
     {
         
-        public int GeneralNumber { get; set; }
+        public string GeneralNumber { get; set; }
       
         public int OrderNumber { get; set; }
         public int Count { get; set; }
